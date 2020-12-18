@@ -2,7 +2,7 @@
 
 name: build + scp
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
@@ -24,8 +24,15 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '14.x'
+
       - name: Set gitbook
         run: npm install gitbook -g
-        
+
+      - name: gitbook install plugins
+          run: gitbook install
+
       - name: build
         run: gitbook build
+
+      -name: result
+        run: ls -la
