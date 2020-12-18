@@ -27,7 +27,6 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@master
-        run: cat book.json
 
       - name: ls -la
         run: ls -la
