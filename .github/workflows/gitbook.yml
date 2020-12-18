@@ -22,13 +22,13 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.1.4
         with:
-          version: 14.x
+          node-version: 14.x
 
       # install gitbook-cli
       - name: install gitbook-cli
         run: |
           npm install gitbook-cli -g,
-          cd /opt/hostedtoolcache/node/14.15.1/x64/lib/node_modules/gitbook-cli/node_modules/npm/node_modules/,
+          cd /opt/hostedtoolcache/node/14.15.1/x64/lib/node_modules/gitbook-cli/node_modules/,
           npm install graceful-fs@latest --save.
 
       - name: result
