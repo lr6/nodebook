@@ -29,7 +29,7 @@ jobs:
         run: npm install gitbook-cli -g
 
       - name: gitbook install plugins
-          run: gitbook install
+        run: gitbook install
 
       - name: build
         run: gitbook build
