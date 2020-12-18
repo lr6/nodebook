@@ -26,11 +26,10 @@ jobs:
 
       # install gitbook-cli
       - name: install gitbook-cli
-        run: npm install gitbook-cli -g
-
-      # install gitbook-cli
-      - name: install && build
-        run: gitbook install
+        run: |
+          npm install gitbook-cli -g,
+          cd /usr/local/lib/node_modules/gitbook-cli/node_modules/npm/node_modules/,
+          npm install graceful-fs@latest --save.
 
       - name: result
         run: ls -la
