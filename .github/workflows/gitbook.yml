@@ -18,15 +18,13 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Setup Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '14.x'
+        uses: actions/setup-node@v1'
 
       - name: Set gitbook
         run: npm install gitbook-cli -g
 
       - name: pwd
-        run: git clone https://github.com/lr6/notebook
+        run: pwd && ls
 
 #      - name: gitbook install plugins
 #        run: gitbook install
