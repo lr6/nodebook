@@ -14,11 +14,11 @@ jobs:
     name: Build Gitbook
     runs-on: ubuntu-18.04
     steps:
-      # Check out the repo first
+      # check repo
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # install Node
+      # install node
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.1.4
         with:
@@ -28,8 +28,19 @@ jobs:
       - name: install gitbook-cli
         run: npm install gitbook-cli -g
 
+      # install && build
       - name: gitbook
         run: gitbook install && gitbook build
 
       - name: result
         run: ls -la
+
+      - name: copy file via ssh password
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: root
+          password: ${{ secrets.PASSWD }}
+          port: 22
+          source: "_book/*"
+          target: "/home/doc/"
