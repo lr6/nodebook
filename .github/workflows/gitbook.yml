@@ -12,18 +12,19 @@ on:
 jobs:
   build:
     name: Build Gitbook
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
       # Check out the repo first
       - name: Checkout code
         uses: actions/checkout@v2
-      # Run this action to publish gitbook
-      - name: Publish
-        uses: tuliren/publish-gitbook@v1.0.0
+      # install Node
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.1.4
         with:
-          # specify either github_token or personal_token
-          github_token: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
-          # personal_token: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
-      # sds
+          version: 14.x
+      # install gitbook-cli
+      - name: install gitbook-cli
+        uses: npm install gitbook-cli -g
+
       - name: result
         run: ls -la
