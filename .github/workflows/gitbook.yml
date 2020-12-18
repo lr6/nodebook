@@ -10,29 +10,20 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-18.04
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    name: Build Gitbook
+    runs-on: ubuntu-latest
     steps:
-      - name: Setup Node
-        uses: actions/setup-node@v1
+      # Check out the repo first
+      - name: Checkout code
+        uses: actions/checkout@v2
+      # Run this action to publish gitbook
+      - name: Publish
+        uses: tuliren/publish-gitbook@v1.0.0
         with:
-          node-version: '12.18'
-
-      - name: Set gitbook
-        run: npm install gitbook-cli -g
-
-      - name: Checkout
-        uses: actions/checkout@master
-
-      - name: ls -la
-        run: gitbook install
-
-      - name: pwd
-        run: pwd
-
+          # specify either github_token or personal_token
+          github_token: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
+          # personal_token: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
+      # sds
       - name: result
         run: ls -la
