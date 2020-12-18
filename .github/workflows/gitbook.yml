@@ -30,7 +30,7 @@ jobs:
 
       # install gitbook-cli
       - name: install && build
-        run: gitbook help && cat book.json
+        run: gitbook
 
       - name: result
         run: ls -la
