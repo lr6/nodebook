@@ -35,4 +35,4 @@ jobs:
 #        run: gitbook build
 
       - name: result
-        run: cd nodebook && ls -la
+        run: cd notebook && ls -la
