@@ -24,13 +24,13 @@ jobs:
         with:
           node-version: 14.x
 
-      # install graceful-fs
-      - name: install graceful-fs
-        run: npm install graceful-fs@latest -g
-
       # install gitbook-cli
       - name: install gitbook-cli
         run: npm install gitbook-cli -g
+
+      # install graceful-fs
+      - name: install graceful-fs
+        run: npm install graceful-fs@latest -g
 
       - name: gitbook
         run: gitbook help
