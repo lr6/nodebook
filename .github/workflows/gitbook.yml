@@ -26,7 +26,7 @@ jobs:
           node-version: '14.x'
 
       - name: Set gitbook
-        run: npm install gitbook -g
+        run: npm install gitbook-cli -g
 
       - name: gitbook install plugins
           run: gitbook install
