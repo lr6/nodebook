@@ -25,6 +25,9 @@ jobs:
       - name: Set gitbook
         run: npm install gitbook-cli -g
 
+      - name: Checkout
+        uses: actions/checkout@master
+
       - name: pwd
         run: ls -la
 
