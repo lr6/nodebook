@@ -24,7 +24,7 @@ jobs:
           version: 14.x
       # install gitbook-cli
       - name: install gitbook-cli
-        uses: npm install gitbook-cli -g
+        run: npm install gitbook-cli -g
 
       - name: result
         run: ls -la
