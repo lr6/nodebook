@@ -29,7 +29,7 @@ jobs:
         run: npm install gitbook-cli -g
 
       - name: gitbook
-        run: gitbook --version
+        run: gitbook install
 
       - name: result
         run: ls -la
