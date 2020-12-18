@@ -31,7 +31,7 @@ jobs:
           npm install gitbook-cli -g.
 
       - name: gitbook
-        run: gitbook help
+        run: node -v
 
       - name: result
         run: ls -la
