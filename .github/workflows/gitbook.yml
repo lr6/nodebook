@@ -26,13 +26,10 @@ jobs:
         run: npm install gitbook-cli -g
 
       - name: pwd
-        run: pwd && ls
+        run: ls -la
 
 #      - name: gitbook install plugins
 #        run: gitbook install
 #
 #      - name: gitbook build
 #        run: gitbook build
-
-      - name: result
-        run: cd notebook && ls -la
