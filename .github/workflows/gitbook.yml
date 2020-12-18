@@ -28,6 +28,9 @@ jobs:
       - name: pwd
         run: ls -la
 
+      - name: gitbook install plugins
+        run: cat book.json
+
 #      - name: gitbook install plugins
 #        run: gitbook install
 #
