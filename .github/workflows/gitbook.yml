@@ -27,12 +27,13 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@master
+        run: cat book.json
 
-      - name: gitbook install plugins
-        run: gitbook install
+      - name: ls -la
+        run: ls -la
 
-      - name: gitbook build
-        run: gitbook build
+      - name: pwd
+        run: pwd
 
       - name: result
         run: ls -la
