@@ -17,18 +17,20 @@ jobs:
       # Check out the repo first
       - name: Checkout code
         uses: actions/checkout@v2
+
       # install Node
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.1.4
         with:
           version: 14.x
+
       # install gitbook-cli
       - name: install gitbook-cli
         run: npm install gitbook-cli -g
 
       # install gitbook-cli
       - name: install && build
-        run: gitbook install && gitbook build
+        run: gitbook help && cat book.json
 
       - name: result
         run: ls -la
