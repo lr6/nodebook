@@ -11,8 +11,8 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   build:
-    name: Build Gitbook
-    runs-on: ubuntu-18.04
+    name: Build vuepress
+    runs-on: ubuntu-20.04
     steps:
       # check repo
       - name: Checkout code
@@ -22,15 +22,15 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.1.4
         with:
-          node-version: 10.x
+          node-version: 12.x
 
       # install gitbook-cli
-      - name: install gitbook-cli
-        run: npm install gitbook-cli -g
+      - name: install yarn
+        run: npm install yarn -g
 
       # install && build
-      - name: gitbook
-        run: gitbook install && gitbook build
+      - name: build
+        run: yarn && yarn build:docs
 
       - name: result
         run: ls -la
@@ -42,5 +42,5 @@ jobs:
           username: root
           password: ${{ secrets.PASSWD }}
           port: 22
-          source: "_book/*"
-          target: "/home/doc/"
+          source: "docs/.vuepress/dist/*"
+          target: "/root/web/note.zhio.cc/"
