@@ -30,7 +30,7 @@ jobs:
 
       # install && build
       - name: build
-        run: yarn && yarn build:docs
+        run: yarn && yarn build
 
       - name: result
         run: ls -la
