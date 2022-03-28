@@ -33,7 +33,7 @@ jobs:
         run: yarn && yarn build
 
       - name: result
-        run: ls -la
+        run: tree
 
       - name: copy file via ssh password
         uses: appleboy/scp-action@master
