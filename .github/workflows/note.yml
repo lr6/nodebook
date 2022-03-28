@@ -42,5 +42,5 @@ jobs:
           username: root
           password: ${{ secrets.PASSWD }}
           port: 22
-          source: "docs/"
+          source: "docs/.vuepress/dist/*"
           target: "/root/web/note.zhio.cc/"
